@@ -11,8 +11,7 @@ href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
 <link rel="icon" href="{{ asset('images/logo-wiyasa.png') }}" type="image/png">
 <title>Konsultan Perizinan</title>
 
-<link rel="stylesheet" href="/build/assets/app-44l-bvTZ.css">
-<script src="/build/assets/app-BlJoUbyE.js" defer></script>
+@vite(['resources/css/app.css','resources/js/app.js'])
 
 </head>
 
