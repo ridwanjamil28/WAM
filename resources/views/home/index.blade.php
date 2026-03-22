@@ -29,32 +29,49 @@
 
 window.onload = function(){
 
+// 🔥 LAYANAN SLIDER
 new Swiper(".layananSwiper", {
-slidesPerView: 3,
-spaceBetween: 30,
+slidesPerView: 1,
+spaceBetween: 20,
 loop: true,
 freeMode: true,
 freeModeMomentum: false,
 autoplay: { delay: 0, disableOnInteraction: false },
 speed: 5000,
 
+breakpoints: {
+640: { slidesPerView: 1 },
+768: { slidesPerView: 2 },
+1024: { slidesPerView: 3 }
+},
+
 observer: true,
-    observeParents: true
+observeParents: true
 });
 
+
+// 🔥 PORTFOLIO SLIDER
 new Swiper(".portfolioSwiper", {
-slidesPerView: 3,
-spaceBetween: 30,
+slidesPerView: 1,
+spaceBetween: 20,
 loop: true,
 autoplay: { delay: 2500, disableOnInteraction: false },
 speed: 1000,
-observer: true,
-    observeParents: true
 
+breakpoints: {
+640: { slidesPerView: 1 },
+768: { slidesPerView: 2 },
+1024: { slidesPerView: 3 }
+},
+
+observer: true,
+observeParents: true
 });
 
-
 };
+
+
+// 🔥 COUNTER ANIMATION
 document.addEventListener("DOMContentLoaded", function(){
 
 const counters = document.querySelectorAll('.counter');

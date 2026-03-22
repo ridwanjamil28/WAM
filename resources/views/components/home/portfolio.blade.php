@@ -1,11 +1,10 @@
-<section id="portofolio" class="bg-gray-900 pt-24 pb-10">
+<section id="portofolio" class="bg-gray-900 py-12 md:py-20">
 
-
-<h2 class="text-3xl font-bold text-center text-white mb-16">
+<h2 class="text-2xl md:text-3xl font-bold text-center text-white mb-8 md:mb-16">
 Portfolio Kami
 </h2>
 
-<div class="max-w-7xl mx-auto px-6">
+<div class="max-w-7xl mx-auto px-4 md:px-6">
 
 <div class="swiper portfolioSwiper">
 
@@ -19,25 +18,25 @@ Portfolio Kami
 
 @if($portfolio->gambar)
 <img src="{{ asset('images/'.$portfolio->gambar) }}"
-class="w-full h-64 object-cover transition duration-700 ease-in-out group-hover:scale-110">
+class="w-full h-48 sm:h-56 md:h-64 object-cover transition duration-700 ease-in-out group-hover:scale-110">
 @endif
 
 <!-- OVERLAY -->
 <div class="absolute inset-0 bg-black/20 group-hover:bg-black/60 transition duration-500"></div>
 
 <!-- CONTENT -->
-<div class="absolute inset-0 flex flex-col justify-end p-6 text-white
+<div class="absolute inset-0 flex flex-col justify-end p-4 md:p-6 text-white
 opacity-0 group-hover:opacity-100 transition duration-500">
 
-<h3 class="text-xl font-bold mb-1">
+<h3 class="text-base md:text-xl font-bold mb-1">
 {{ $portfolio->judul }}
 </h3>
 
-<p class="text-sm mb-3">
+<p class="text-xs md:text-sm mb-3">
 {{ Str::limit($portfolio->deskripsi, 60) }}
 </p>
 
-<span class="text-green-400 text-lg">
+<span class="text-green-400 text-sm md:text-lg">
 Lihat Detail →
 </span>
 

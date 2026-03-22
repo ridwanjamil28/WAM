@@ -1,9 +1,9 @@
-<section class="bg-gray-50 py-20"
+<section class="bg-gray-50 py-12 md:py-20"
 data-aos="fade-up">
 
-<div class="max-w-7xl mx-auto px-6">
+<div class="max-w-7xl mx-auto px-4 md:px-6">
 
-<div class="grid md:grid-cols-3 gap-10">
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-10">
 
 @php
 $plans = [
@@ -52,33 +52,40 @@ $plans = [
 ];
 @endphp
 
-@foreach($plans as $plan)
-<div class="bg-white shadow-soft p-8 relative border border-gray-200 
-hover-lift hover:border-green-500">
+@foreach($plans as $index => $plan)
+<div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 md:p-8 flex flex-col justify-between 
+hover:shadow-xl hover:-translate-y-2 transition duration-300 relative">
 
-<h3 class="text-lg font-semibold mb-4 border-b-2 border-green-500 inline-block pb-2">
+<!-- 🔥 BADGE POPULAR -->
+@if($index == 1)
+<div class="absolute top-0 right-0 bg-green-600 text-white text-xs px-3 py-1 rounded-bl-xl">
+POPULAR
+</div>
+@endif
+
+<h3 class="text-base md:text-lg font-semibold mb-4 border-b-2 border-green-500 inline-block pb-2">
 {{ $plan['title'] }}
 </h3>
 
-<p class="text-gray-500 text-sm mt-4">Mulai Dari</p>
+<p class="text-gray-500 text-xs md:text-sm mt-2">Mulai Dari</p>
 
-<h2 class="text-4xl font-bold text-gray-900 mb-6">
+<h2 class="text-2xl md:text-4xl font-bold text-gray-900 mb-6">
 {{ $plan['price'] }}
 </h2>
 
-<div class="border-t pt-6">
+<div class="border-t pt-4 md:pt-6 flex-grow">
 
-<p class="font-semibold mb-3">Item Pekerjaan:</p>
+<p class="font-semibold mb-2 md:mb-3 text-sm md:text-base">Item Pekerjaan:</p>
 
-<ul class="space-y-2 text-gray-600 text-sm">
+<ul class="space-y-1 md:space-y-2 text-gray-600 text-xs md:text-sm">
 @foreach($plan['items'] as $item)
 <li>✔ {{ $item }}</li>
 @endforeach
 </ul>
 
-<p class="font-semibold mt-6 mb-3">Syarat & Ketentuan:</p>
+<p class="font-semibold mt-4 md:mt-6 mb-2 md:mb-3 text-sm md:text-base">Syarat & Ketentuan:</p>
 
-<ul class="space-y-2 text-gray-600 text-sm">
+<ul class="space-y-1 md:space-y-2 text-gray-600 text-xs md:text-sm">
 @foreach($plan['terms'] as $term)
 <li>✔ {{ $term }}</li>
 @endforeach
@@ -94,9 +101,10 @@ Nama :
 Lokasi Proyek :
 
 Terima kasih.') }}"
-class="mt-8 inline-block bg-black text-white px-6 py-3 font-semibold hover:bg-gray-800">
+class="mt-6 md:mt-8 inline-block bg-green-600 text-white text-sm md:text-base px-5 py-3 font-semibold rounded-lg text-center 
+hover:bg-green-700 hover:scale-105 transition duration-300">
 
-CHOOSE PLAN →
+Konsultasi Sekarang →
 
 </a>
 

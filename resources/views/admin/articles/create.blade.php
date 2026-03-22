@@ -34,7 +34,7 @@
 
 <div class="mb-3">
 <label>Konten</label>
-<textarea name="content" class="form-control" rows="5"></textarea>
+<textarea name="content" id="editor" class="form-control" rows="5"></textarea>
 </div>
 
 <div class="mb-3">

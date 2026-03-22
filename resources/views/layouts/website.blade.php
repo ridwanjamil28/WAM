@@ -19,15 +19,15 @@ href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
 
 <!-- Top Bar -->
 <div class="bg-white border-b text-sm">
-  <div class="max-w-7xl mx-auto flex justify-between items-center py-2 px-4">
+  <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center py-2 px-4 gap-2">
     
-    <div class="flex gap-6 text-gray-700">
+    <div class="flex flex-col md:flex-row gap-2 md:gap-6 text-gray-700 text-center md:text-left">
       <span>✉ wiyasaarthamultiguna@gmail.com</span>
       <span>📍 Jl. Pamekar Barat Asri II No.11, Kota Bandung</span>
       <span>📞 +62 8XXX XXXX XXX</span>
     </div>
 
-    <div class="bg-green-600 text-white px-6 py-2">
+    <div class="bg-green-600 text-white px-4 py-2 text-sm">
       Follow Us
     </div>
 
@@ -37,15 +37,15 @@ href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
 <!-- Navbar -->
 <nav id="navbar"
 class="sticky top-0 z-50 bg-white/80 backdrop-blur-lg transition-all duration-500">
-  <div class="max-w-7xl mx-auto flex items-center justify-between px-4 py-4">
+  <div class="max-w-7xl mx-auto flex items-center justify-between px-4 py-3 md:py-4">
 
     <!-- Logo -->
     <a href="/" class="flex items-center gap-3">
 
       <img src="{{ asset('images/logo-wiyasa.png') }}"
-      class="w-20 h-20 object-contain">
+class="w-12 h-12 md:w-20 md:h-20 object-contain">
 
-      <div class="flex flex-col leading-none text-green-900 font-bold text-lg">
+      <div class="flex flex-col leading-none text-green-900 font-bold text-sm md:text-lg">
       <span>WIYASA</span>
       <span>ARTHA</span>
       <span>MULTIGUNA</span>
@@ -77,7 +77,7 @@ class="sticky top-0 z-50 bg-white/80 backdrop-blur-lg transition-all duration-50
 </button>
 
     <!-- Button -->
-    <button class="bg-black text-white px-6 py-3 font-semibold rounded-lg shadow-soft btn-glow">
+    <button class="bg-black text-white px-4 py-2 md:px-6 md:py-3 text-sm md:text-base font-semibold rounded-lg shadow-soft btn-glow">
      <a href="https://wa.me/6285137399974?text={{ urlencode('Halo Wiyasa Artha Multiguna,
 
 Saya ingin berkonsultasi mengenai pengurusan perizinan bangunan.
@@ -93,7 +93,7 @@ Terima kasih.') }}"> HUBUNGI KAMI →</a>
   <!-- MOBILE MENU -->
 
 <div id="mobile-menu"
-class="hidden bg-white shadow-soft md:hidden transition-all duration-300">
+class="hidden bg-white shadow-soft md:hidden transition-all duration-300 ease-in-out">
 
 <ul class="flex flex-col text-center py-6 space-y-4">
 
@@ -119,31 +119,31 @@ class="hidden bg-white shadow-soft md:hidden transition-all duration-300">
 </div>
 
 
+
 <!-- FOOTER -->
+<footer class="bg-gray-900 text-gray-300 pt-12 md:pt-16 pb-6 border-t border-gray-800">
 
-<footer class="bg-gray-900 text-gray-300 pt-16 pb-6 border-t border-gray-800">
+<div class="max-w-7xl mx-auto px-4 md:px-6">
 
-<div class="max-w-7xl mx-auto px-6">
-
-<div class="grid md:grid-cols-4 gap-10 mb-10">
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-10 mb-10 text-center md:text-left">
 
 <!-- LOGO -->
-<div>
+<div class="flex flex-col items-center md:items-start">
 
 <div class="flex items-center gap-3 mb-4">
 
 <img src="{{ asset('images/logo-wiyasa.png') }}"
-class="w-14">
+class="w-12 md:w-14">
 
-<div class="leading-tight">
-<p class="font-bold text-white">WIYASA</p>
-<p class="font-bold text-white">ARTHA</p>
-<p class="font-bold text-white">MULTIGUNA</p>
+<div class="leading-tight text-left">
+<p class="font-bold text-white text-sm md:text-base">WIYASA</p>
+<p class="font-bold text-white text-sm md:text-base">ARTHA</p>
+<p class="font-bold text-white text-sm md:text-base">MULTIGUNA</p>
 </div>
 
 </div>
 
-<p class="text-sm text-gray-400">
+<p class="text-xs md:text-sm text-gray-400 max-w-xs">
 Kami membantu pengurusan perizinan bangunan seperti 
 PBG, SLF, PKKPR dan dokumen lingkungan secara 
 profesional dan terpercaya.
@@ -153,31 +153,28 @@ profesional dan terpercaya.
 
 <!-- MENU -->
 <div>
-
-<h3 class="text-white font-semibold mb-4">
+<h3 class="text-white font-semibold mb-3 md:mb-4">
 Menu
 </h3>
 
-<ul class="space-y-2">
+<ul class="space-y-2 text-sm md:text-base">
 
-<li><a href="#beranda" class="hover:text-green-500">Beranda</a></li>
-<li><a href="#layanan" class="hover:text-green-500">Layanan</a></li>
-<li><a href="#portofolio" class="hover:text-green-500">Portfolio</a></li>
-<li><a href="#tentang" class="hover:text-green-500">Tentang Kami</a></li>
-<li><a href="#" class="hover:text-green-500">Artikel</a></li>
+<li><a href="#beranda" class="hover:text-green-500 transition">Beranda</a></li>
+<li><a href="#layanan" class="hover:text-green-500 transition">Layanan</a></li>
+<li><a href="#portofolio" class="hover:text-green-500 transition">Portfolio</a></li>
+<li><a href="#tentang" class="hover:text-green-500 transition">Tentang Kami</a></li>
+<li><a href="#" class="hover:text-green-500 transition">Artikel</a></li>
 
 </ul>
-
 </div>
 
 <!-- LAYANAN -->
 <div>
-
-<h3 class="text-white font-semibold mb-4">
+<h3 class="text-white font-semibold mb-3 md:mb-4">
 Layanan
 </h3>
 
-<ul class="space-y-2">
+<ul class="space-y-2 text-sm md:text-base">
 
 <li>PBG</li>
 <li>SLF</li>
@@ -185,30 +182,29 @@ Layanan
 <li>Dokumen Lingkungan</li>
 
 </ul>
-
 </div>
 
 <!-- KONTAK -->
 <div>
-
-<h3 class="text-white font-semibold mb-4">
+<h3 class="text-white font-semibold mb-3 md:mb-4">
 Kontak
 </h3>
 
-<ul class="space-y-3 text-sm">
+<ul class="space-y-3 text-sm md:text-base">
 
-<li>📍 Kota Bandung</li>
-
-<li>
-📞 +62 8XXX XXXX XXX
+<li class="flex items-center justify-center md:justify-start gap-2">
+<span>📍</span> Kota Bandung
 </li>
 
-<li>
-✉ wiyasaarthamultiguna@gmail.com
+<li class="flex items-center justify-center md:justify-start gap-2">
+<span>📞</span> +62 8XXX XXXX XXX
 </li>
 
-<li>
+<li class="flex items-center justify-center md:justify-start gap-2">
+<span>✉</span> wiyasaarthamultiguna@gmail.com
+</li>
 
+<li class="flex justify-center md:justify-start">
 <a href="https://wa.me/6285137399974?text={{ urlencode('Halo Wiyasa Artha Multiguna,
 
 Saya ingin berkonsultasi mengenai pengurusan perizinan bangunan.
@@ -217,23 +213,18 @@ Nama :
 Lokasi Proyek :
 
 Terima kasih.') }}"
-class="inline-block bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded">
-
+class="inline-block bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg text-sm transition duration-300 hover:scale-105">
 Chat WhatsApp
-
 </a>
-
 </li>
 
 </ul>
-
 </div>
 
 </div>
 
 <!-- COPYRIGHT -->
-
-<div class="border-t border-gray-700 pt-6 text-center text-sm text-gray-400">
+<div class="border-t border-gray-700 pt-4 md:pt-6 text-center text-xs md:text-sm text-gray-400">
 
 © {{ date('Y') }} Wiyasa Artha Multiguna. All Rights Reserved.
 
