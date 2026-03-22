@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind typography;
+
+html{
+scroll-behavior:smooth;
+}
+/* Better shadow */
+.shadow-soft {
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* Hover lift effect */
+.hover-lift {
+    transition: all 0.3s ease;
+}
+.hover-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+/* Button glow */
+.btn-glow {
+    transition: all 0.3s ease;
+}
+.btn-glow:hover {
+    box-shadow: 0 0 20px rgba(34,197,94,0.6);
+    transform: translateY(-2px);
+}
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeInUp 1s ease forwards;
+}
+
+a, button {
+    transition: all 0.25s ease;
+}
+
+img {
+    transition: transform 0.5s ease;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
+.prose h2 {
+    color: #111827;
+    margin-top: 2em;
+}
+
+.prose p {
+    line-height: 1.8;
+}
+
+.prose blockquote {
+    border-left: 4px solid #22c55e;
+    padding-left: 1rem;
+    font-style: italic;
+    color: #374151;
+}
