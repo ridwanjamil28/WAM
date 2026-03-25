@@ -14,13 +14,12 @@ WELCOME TO WIYASA ARTHA MULTIGUNA
 </p>
 
 <h1 class="text-3xl sm:text-4xl md:text-6xl font-bold text-gray-900 leading-tight">
-Solusi Cepat,<br>
-<span class="text-green-700">Tepat dan Legal....</span>
+{{ setting('hero_title') }}<br>
+<span class="text-green-700">{{ setting('hero_highlight') }}</span>
 </h1>
 
 <p class="text-gray-600 max-w-md mx-auto md:mx-0 text-sm md:text-base">
-Kami membantu pengurusan PBG, SLF, PKKPR dan dokumen lingkungan
-secara profesional, cepat, dan sesuai regulasi pemerintah.
+{{ setting('hero_desc') }}
 </p>
 
 <a href="https://wa.me/{{ $wa }}?text={{ $message }}"
