@@ -9,12 +9,15 @@ rel="stylesheet"
 href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
 />
 <link rel="icon" href="{{ asset('images/logo-wiyasa.png') }}" type="image/png">
-<title>Konsultan Perizinan</title>
+<title>@yield('title', setting('site_name'))</title>
 
 @vite(['resources/css/app.css','resources/js/app.js'])
 
 </head>
-
+@php
+$wa = setting('whatsapp');
+$message = urlencode(setting('wa_message'));
+@endphp
 <body class="bg-gray-100">
 
 <!-- Top Bar -->
@@ -22,9 +25,9 @@ href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
   <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center py-2 px-4 gap-2">
     
     <div class="flex flex-col md:flex-row gap-2 md:gap-6 text-gray-700 text-center md:text-left">
-      <span>✉ wiyasaarthamultiguna@gmail.com</span>
-      <span>📍 Jl. Pamekar Barat Asri II No.11, Kota Bandung</span>
-      <span>📞 +62 8XXX XXXX XXX</span>
+      <span>✉ {{ setting('email') }}</span>
+      <span>📍 {{ setting('alamat') }}</span>
+      <span>📞 {{ setting('whatsapp') }}</span>
     </div>
 
     <div class="bg-green-600 text-white px-4 py-2 text-sm">
@@ -62,7 +65,7 @@ class="w-12 h-12 md:w-20 md:h-20 object-contain">
 
     <li><a href="{{ url('/portfolio') }}" class="hover:text-green-600">Portofolio</a></li>
 
-    <li><a href="{{ url('/#tentang') }}" class="hover:text-green-600">Tentang Kami</a></li>
+    <li><a href="{{ url('/tentang') }}" class="hover:text-green-600">Tentang Kami</a></li>
 
     <li><a href="{{ url('/#kontak') }}" class="hover:text-green-600">Kontak Kami</a></li>
 
@@ -78,14 +81,7 @@ class="w-12 h-12 md:w-20 md:h-20 object-contain">
 
     <!-- Button -->
     <button class="bg-black text-white px-4 py-2 md:px-6 md:py-3 text-sm md:text-base font-semibold rounded-lg shadow-soft btn-glow">
-     <a href="https://wa.me/6285137399974?text={{ urlencode('Halo Wiyasa Artha Multiguna,
-
-Saya ingin berkonsultasi mengenai pengurusan perizinan bangunan.
-
-Nama :
-Lokasi Proyek :
-
-Terima kasih.') }}"> HUBUNGI KAMI →</a>
+     <a href="https://wa.me/{{ $wa }}?text={{ $message }}"> HUBUNGI KAMI →</a>
     </button>
 </div>
   </div>
@@ -100,7 +96,7 @@ class="hidden bg-white shadow-soft md:hidden transition-all duration-300 ease-in
 <li><a href="{{ url('/#beranda') }}" class="hover:text-green-600">Beranda</a></li>
 <li><a href="{{ url('/layanan') }}" class="hover:text-green-600">Layanan</a></li>
 <li><a href="{{ url('/portfolio') }}" class="hover:text-green-600">Portofolio</a></li>
-<li><a href="{{ url('/#tentang') }}" class="hover:text-green-600">Tentang Kami</a></li>
+<li><a href="{{ url('/tentang') }}" class="hover:text-green-600">Tentang Kami</a></li>
 <li><a href="{{ url('/#kontak') }}" class="hover:text-green-600">Kontak Kami</a></li>
 <li><a href="/artikel" class="hover:text-green-600">Artikel</a></li>
 
@@ -193,26 +189,19 @@ Kontak
 <ul class="space-y-3 text-sm md:text-base">
 
 <li class="flex items-center justify-center md:justify-start gap-2">
-<span>📍</span> Kota Bandung
+<span>📍</span> {{ setting('alamat') }}
 </li>
 
 <li class="flex items-center justify-center md:justify-start gap-2">
-<span>📞</span> +62 8XXX XXXX XXX
+<span>📞</span> {{ setting('whatsapp') }}
 </li>
 
 <li class="flex items-center justify-center md:justify-start gap-2">
-<span>✉</span> wiyasaarthamultiguna@gmail.com
+<span>✉</span> {{ setting('email') }}
 </li>
 
 <li class="flex justify-center md:justify-start">
-<a href="https://wa.me/6285137399974?text={{ urlencode('Halo Wiyasa Artha Multiguna,
-
-Saya ingin berkonsultasi mengenai pengurusan perizinan bangunan.
-
-Nama :
-Lokasi Proyek :
-
-Terima kasih.') }}"
+<a href="https://wa.me/{{ $wa }}?text={{ $message }}"
 class="inline-block bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg text-sm transition duration-300 hover:scale-105">
 Chat WhatsApp
 </a>
@@ -281,14 +270,7 @@ opacity-0 group-hover:opacity-100 transition duration-300">
 </div>
 
 <!-- Button -->
-<a href="https://wa.me/6285137399974?text={{ urlencode('Halo Wiyasa Artha Multiguna,
-
-Saya ingin berkonsultasi mengenai pengurusan perizinan bangunan.
-
-Nama :
-Lokasi Proyek :
-
-Terima kasih.') }}"
+<a href="https://wa.me/{{ $wa }}?text={{ $message }}"
 target="_blank"
 class="bg-green-500 text-white p-4 rounded-full shadow-soft btn-glow
 flex items-center justify-center

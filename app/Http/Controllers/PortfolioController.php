@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Portfolio;
 use Illuminate\Http\Request;
+use App\Models\Client;
+use App\Models\Gallery;
 
 
 class PortfolioController extends Controller
@@ -14,8 +16,10 @@ class PortfolioController extends Controller
     public function index()
     {
          $portfolios = Portfolio::all();
+         $clients = Client::latest()->get();
+         $galleries = Gallery::latest()->get();
 
-    return view('portfolio.index', compact('portfolios'));
+    return view('portfolio.index', compact('portfolios','clients','galleries'));
     }
 
     /**
@@ -120,6 +124,8 @@ return redirect()->route('portfolio.index');
        public function list()
 {
     $portfolios = Portfolio::latest()->get();
-      return view('frontend.portfolio.index', compact('portfolios'));
+      $clients = Client::latest()->get();
+      $galleries = Gallery::latest()->get();
+      return view('frontend.portfolio.index', compact('portfolios','clients','galleries'));
 }
 }

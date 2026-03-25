@@ -71,6 +71,24 @@ Artikel
 class="list-group-item list-group-item-action {{ request()->is('admin/categories*') ? 'active' : '' }}">
 Kategori
 </a>
+
+<a href="{{ route('settings.index') }}" 
+class="list-group-item list-group-item-action {{ request()->is('admin/settings*') ? 'active' : '' }}">
+Setting Website
+</a>
+
+<a href="{{ route('pricings.index') }}" 
+class="list-group-item list-group-item-action {{ request()->is('admin/pricings*') ? 'active' : '' }}">
+Pricing
+</a>
+<a href="{{ route('clients.index') }}" 
+class="list-group-item list-group-item-action {{ request()->is('admin/clients*') ? 'active' : '' }}">
+Client
+</a>
+<a href="{{ route('galleries.index') }}" 
+class="list-group-item list-group-item-action {{ request()->is('admin/galleries*') ? 'active' : '' }}">
+Galeri
+</a>
 </div>
 
 </div>

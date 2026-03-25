@@ -3,7 +3,7 @@
 @section('content')
 <x-home.hero />
 
-<x-home.trusted />
+<x-home.trusted :clients="$clients" />
 
 <x-home.layanan-highlight />
 
@@ -15,7 +15,7 @@
 
 <x-home.keunggulan />
 
-<x-home.pricing />
+<x-home.pricing :pricings="$pricings" />
 
 <x-home.cta />
 

@@ -1,5 +1,8 @@
 <section id="beranda" class="relative overflow-hidden pt-10 md:pt-20 bg-gradient-to-b from-white to-gray-50">
-
+@php
+$wa = setting('whatsapp');
+$message = urlencode(setting('wa_message'));
+@endphp
 <div class="max-w-7xl mx-auto flex flex-col-reverse md:grid md:grid-cols-2 items-center px-4 md:px-6 gap-10"
 data-aos="fade-up">
 
@@ -20,14 +23,7 @@ Kami membantu pengurusan PBG, SLF, PKKPR dan dokumen lingkungan
 secara profesional, cepat, dan sesuai regulasi pemerintah.
 </p>
 
-<a href="https://wa.me/6285137399974?text={{ urlencode('Halo Wiyasa Artha Multiguna,
-
-Saya ingin berkonsultasi mengenai pengurusan perizinan bangunan.
-
-Nama :
-Lokasi Proyek :
-
-Terima kasih.') }}"
+<a href="https://wa.me/{{ $wa }}?text={{ $message }}"
 class="inline-block mt-6 md:mt-8 bg-green-600 text-white px-5 py-3 md:px-8 md:py-4 text-sm md:text-base font-semibold shadow-soft btn-glow rounded-lg">
 Mulai Berkonsultasi →
 </a>

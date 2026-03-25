@@ -1,3 +1,7 @@
+@php
+$wa = setting('whatsapp');
+$message = urlencode(setting('wa_message'));
+@endphp
 <section id="kontak" class="bg-white py-12 md:py-20">
 
 <div class="max-w-7xl mx-auto px-4 md:px-6">
@@ -81,14 +85,7 @@ Kirim Pesan
     <div class="text-green-600 text-lg">💬</div>
     <div>
         <p class="font-semibold text-gray-900">WhatsApp</p>
-        <a href="https://wa.me/6285137399974?text={{ urlencode('Halo Wiyasa Artha Multiguna,
-
-Saya ingin berkonsultasi mengenai pengurusan perizinan bangunan.
-
-Nama :
-Lokasi Proyek :
-
-Terima kasih.') }}"
+        <a href="https://wa.me/{{ $wa }}?text={{ $message }}"
         class="inline-block mt-2 bg-green-600 hover:bg-green-700 px-4 py-2 rounded-lg text-sm text-white transition duration-300">
         Chat WhatsApp
         </a>

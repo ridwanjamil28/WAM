@@ -1,5 +1,9 @@
 @extends('layouts.website')
 @php use Illuminate\Support\Str; @endphp
+@php
+$wa = setting('whatsapp');
+$message = urlencode(setting('wa_message'));
+@endphp
 
 @section('content')
 
@@ -35,14 +39,7 @@ Daftar Layanan
 <div class="bg-white rounded-2xl shadow-soft overflow-hidden hover-lift group">
 
 <div class="overflow-hidden">
-    <a href="https://wa.me/6285137399974?text={{ urlencode('Halo Wiyasa Artha Multiguna,
-
-Saya ingin berkonsultasi mengenai pengurusan perizinan bangunan.
-
-Nama :
-Lokasi Proyek :
-
-Terima kasih.') }}">
+    <a href="https://wa.me/{{ $wa }}?text={{ $message }}">
 <img src="{{ asset('images/'.$service->gambar ?? 'https://via.placeholder.com/400x250') }}"
 class="w-full h-52 object-cover group-hover:scale-105 transition duration-500">
 </div>
@@ -56,7 +53,7 @@ class="w-full h-52 object-cover group-hover:scale-105 transition duration-500">
 {{ Str::limit($service->deskripsi, 100) }}
 </p>
 
-<a href="{{ route('layanan.show', $service->slug) }}"
+<a href="https://wa.me/{{ $wa }}?text={{ $message }}"
 class="text-green-600 font-semibold flex items-center gap-2">
 
 Lihat Detail

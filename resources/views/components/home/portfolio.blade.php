@@ -13,7 +13,7 @@ Portfolio Kami
 @foreach($portfolios as $portfolio)
 
 <div class="swiper-slide">
-
+<a href="{{ url('/portfolio') }}">
 <div class="group relative overflow-hidden rounded-xl shadow-lg cursor-pointer transform hover:-translate-y-2 transition duration-300">
 
 @if($portfolio->gambar)
@@ -43,6 +43,7 @@ Lihat Detail →
 </div>
 
 </div>
+</a>
 
 </div>
 
